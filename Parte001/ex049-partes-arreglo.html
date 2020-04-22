@@ -1,0 +1,41 @@
+<!-- Ejercicio 49: Particionar un arreglo en dos partes y mostrar los arreglos resultantes. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicios</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <h1>jQuery - Ejercicio 49</h1>
+
+    <h3>Números:</h3>
+    <p id="numeros"></p>
+
+    <h3>Primera parte:</h3>
+    <p id="primeraParte"></p>
+    
+    <h3>Segunda parte:</h3>
+    <p id="segundaParte"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            let numeros = [1, 2, 3, 4, 5];
+
+            $('#numeros').html(numeros.join('<br>'));
+            
+            let primeraParte = numeros.splice(0, 3);
+            $('#primeraParte').html(primeraParte.join('<br>'));
+
+            $('#segundaParte').html(numeros.join('<br>'));
+        });
+    </script>
+</body>
+</html>
