@@ -1,0 +1,29 @@
+<!-- Ejercicio 56: Determinar el botón que el usuario ha presionado con this. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 56</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <button class="boton" id="iniciar">Iniciar</button>
+    <button class="boton" id="detener">Detener</button>
+    
+    <div id="mensaje"></div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('.boton').bind('click', function() {
+                $('#mensaje').text('Se ha presionado el botón ' + $(this).text());
+            });
+        });
+    </script>
+</body>
+</html>
