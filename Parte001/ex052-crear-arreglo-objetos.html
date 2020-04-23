@@ -1,0 +1,47 @@
+<!-- Ejercicio 52: Crear un arreglo con objetos y visualizar su contenido en un párrafo. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 52</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <h3>Datos personas:</h3>
+    <p id="personas"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            let personas = [{
+                id: 1001,
+                nombre: 'Edward',
+                apellido: 'Ortiz',
+                correo: 'edward@mail.co'
+            },
+            {
+                id: 1002,
+                nombre: 'Daniela',
+                apellido: 'Ortiz',
+                correo: 'daniela@mail.co'
+            },
+            {
+                id: 1003,
+                nombre: 'Germán',
+                apellido: 'Ordoñez',
+                correo: 'german@mail.co'
+            }];
+
+            $.each(personas, (indice, persona) => {
+                $('p#personas').append(`${persona.id} - ${persona.nombre} ${persona.apellido} - ${persona.correo}<br>`);
+            });
+        });
+    </script>
+</body>
+</html>
