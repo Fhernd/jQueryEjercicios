@@ -1,0 +1,41 @@
+<!-- Ejercicio 50: Combinar dos arreglos con la función concat() y mostrar su contenido. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicios</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <h1>jQuery - Ejercicio 50</h1>
+
+    <h3>Pares:</h3>
+    <p id="pares"></p>
+
+    <h3>Impares:</h3>
+    <p id="impares"></p>
+    
+    <h3>Arreglos combinados:</h3>
+    <p id="arreglosCombinados"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            let pares = [2, 4, 6, 8, 10];
+            let impares = [1, 3, 5, 7, 9];
+
+            $('p#pares').html(pares.join('<br>'));
+            $('p#impares').html(impares.join('<br>'));
+
+            let numeros = pares.concat(impares);
+            $('p#arreglosCombinados').html(numeros.join('<br>'));
+        });
+    </script>
+</body>
+</html>
