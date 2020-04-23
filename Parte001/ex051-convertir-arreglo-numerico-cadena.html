@@ -1,0 +1,43 @@
+<!-- Ejercicio 51: Convertir un arreglo con datos numéricos en una cadena de caracteres. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicios</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <h1>jQuery - Ejercicio 51</h1>
+
+    <h3>Números:</h3>
+    <p id="numeros"></p>
+
+    <h3>Arreglo como cadena de caracteres:</h3>
+    <p id="arregloCadena"></p>
+    
+    <h3>Subcadena:</h3>
+    <p id="subcadena"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            let primos = [2, 3, 5, 7, 11, 13, 17, 19];
+
+            $('#numeros').html(primos.join('<br>'));
+
+            let primosCadena = primos.join('');
+            $('#arregloCadena').text(primosCadena);
+
+            let subcadena = primosCadena.substr(0, 4);
+            $('#subcadena').text(subcadena);
+        });
+    </script>
+</body>
+</html>
