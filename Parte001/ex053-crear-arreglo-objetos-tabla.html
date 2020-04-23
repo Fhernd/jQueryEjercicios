@@ -1,0 +1,47 @@
+<!-- Ejercicio 53: Crear un arreglo con objetos y visualizar su contenido en una tabla. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 53</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <h3>Datos personas:</h3>
+    <table id="personas"></table>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            let personas = [{
+                id: 1001,
+                nombre: 'Edward',
+                apellido: 'Ortiz',
+                correo: 'edward@mail.co'
+            },
+            {
+                id: 1002,
+                nombre: 'Daniela',
+                apellido: 'Ortiz',
+                correo: 'daniela@mail.co'
+            },
+            {
+                id: 1003,
+                nombre: 'Germán',
+                apellido: 'Ordoñez',
+                correo: 'german@mail.co'
+            }];
+
+            $.each(personas, (indice, p) => {
+                $('#personas').append(`<tr><td>${p.id}</td><td>${p.nombre}</td><td>${p.apellido}</td><td>${p.correo}</td></tr>`);
+            });
+        });
+    </script>
+</body>
+</html>
