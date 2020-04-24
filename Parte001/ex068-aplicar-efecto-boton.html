@@ -1,0 +1,37 @@
+<!-- Ejercicio 68: Aplicar efecto sobre un elemento button por medio de la función hover(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 68</title>
+
+    <style>
+        .estiloBoton {
+            background-color: aqua;
+            color: crimson;
+            cursor: crosshair
+        }
+    </style>
+</head>
+
+<body>
+    <button>Abrir</button>
+    <button>Cerrar</button>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('button').hover(function() {
+                $(this).addClass('estiloBoton');
+            }, function() {
+                $(this).removeClass('estiloBoton');
+            });
+        });
+    </script>
+</body>
+</html>
