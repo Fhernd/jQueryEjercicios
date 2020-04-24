@@ -1,0 +1,39 @@
+<!-- Ejercicio 73: Uso de la función show() para mostrar un elemento HTML. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 73</title>
+
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="mostrarImagen">Mostrar imagen</button>
+
+    <br><br>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/US-%2450-FRBN-1918-Fr.831.jpg/666px-US-%2450-FRBN-1918-Fr.831.jpg" alt="Billetes" class="oculto" id="billetes">
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#mostrarImagen').click(function() {
+                $('#billetes').show(5000);
+            });
+        });
+    </script>
+</body>
+
+</html>
