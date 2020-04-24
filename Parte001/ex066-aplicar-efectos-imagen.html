@@ -1,0 +1,46 @@
+<!-- Ejercicio 66: Aplicar efectos sobre una imagen por medio de eventos del mouse. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 66</title>
+</head>
+
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/US-%2450-FRBN-1918-Fr.831.jpg/666px-US-%2450-FRBN-1918-Fr.831.jpg" alt="Billetes" id="billetes">
+
+    <br>
+
+    <button id="aplicarEfectos">Aplicar efectos</button>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#billetes').css('opacity', 0.4);
+
+            $('#aplicarEfectos').bind('mouseover', function() {
+                $('#billetes').css('opacity', '1.0');
+            });
+
+            $('#aplicarEfectos').bind('mouseout', function() {
+                $('#billetes').css('opacity', 0.4);
+            });
+
+            $('#aplicarEfectos').bind('mousedown', function() {
+                $('#billetes').css('width', function() {
+                    return $(this).width() - 50;
+                });
+                $('#billetes').css('height', function() {
+                    return $(this).height() - 50;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
