@@ -1,0 +1,34 @@
+<!-- Ejercicio 67: Usar la función focus() para detectar cuando un elemento tiene el foco del cursor. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 67</title>
+</head>
+
+<body>
+
+    Nombre: <input type="text" id="nombre"> <br>
+    Edad: <input type="number" id="edad">
+
+    <p id="mensaje"></p>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#nombre').focus(function() {
+                $('#mensaje').text('El campo Nombre tiene el foco del cursor.');
+            });
+
+            $('#nombre').blur(function() {
+                $('#mensaje').text('El campo Nombre ha perdido el foco del cursor.');
+            });
+        });
+    </script>
+</body>
+</html>
