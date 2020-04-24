@@ -1,0 +1,30 @@
+<!-- Ejercicio 63: Determinar el botón del mouse que se ha presionado a través de la propiedad button. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 63</title>
+</head>
+
+<body id="contenido">
+    <div id="mensaje">Texto incial...</div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('body').mousedown(function(evento) {
+                if(evento.button == 0) {
+                    $('#mensaje').text('Se ha presionado el botón izquierdo del mouse.');
+                } else {
+                    $('#mensaje').text('Se ha presionado el botón derecho del mouse.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
