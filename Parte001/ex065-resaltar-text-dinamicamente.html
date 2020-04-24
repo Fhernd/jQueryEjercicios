@@ -1,0 +1,32 @@
+<!-- Ejercicio 65: Resaltar un párrafo de texto de forma dinámica al posicionar el mouse sobre un botón. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 65</title>
+</head>
+
+<body>
+
+    <button id="resaltarTexto">Resaltar texto</button>
+
+    <p>JavaScript es un lenguaje de programación que permite crear aplicaciones interactivas y funcionales.</p>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#resaltarTexto').mouseover(function() {
+                $('p').css({
+                    'background-color': 'yellow',
+                    'font-weight': 'bold'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
