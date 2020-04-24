@@ -1,0 +1,42 @@
+<!-- Ejercicio 71: Mostrar un elemento HTML img por medio de la función fadeIn(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 71</title>
+</head>
+
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/US-%2450-FRBN-1918-Fr.831.jpg/666px-US-%2450-FRBN-1918-Fr.831.jpg" alt="Billetes" id="billetes">
+
+    <hr>
+    <button id="ocultarImagen">Ocultar imagen</button>
+    <button id="mostrarImagen">Mostrar imagen</button>
+
+    <p id="mensaje"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#ocultarImagen').click(function() {
+                $('#billetes').fadeOut(5000, function() {
+                    $('#mensaje').text('La imagen se ha removido.');
+                });
+            });
+
+            $('#mostrarImagen').click(function() {
+                $('#billetes').fadeIn(5000, function() {
+                    $('#mensaje').text('La imagen se ha mostrado.');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
