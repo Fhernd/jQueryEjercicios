@@ -1,0 +1,38 @@
+<!-- Ejercicio 80: Desplazar una imagen hacia la derecha con la función animate(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 80</title>
+
+    <style>
+        #libros {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="animarImagen">Animar imagen</button>
+
+    <br><br>
+    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Old_book_bindings.jpg/320px-Old_book_bindings.jpg" alt="Libros" id="libros">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#animarImagen').bind('click', function() {
+                $('#libros').animate({left: 700}, 5000);
+            });
+        });
+    </script>
+</body>
+
+</html>
