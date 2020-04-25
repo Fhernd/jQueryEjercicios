@@ -1,0 +1,39 @@
+<!-- Ejercicio 83: Usar el encadamiento de invocación de métodos (method chaining). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 83</title>
+    <style>
+        div {
+            border: 1px dashed crimson;
+        }
+
+        .nuevoEstilo {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        jQuery...
+        <p>...es una librería...</p>
+        <span>...para JavaScript.</span>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('div').children().clone().prependTo('div').addClass('nuevoEstilo');
+        });
+    </script>
+</body>
+
+</html>
