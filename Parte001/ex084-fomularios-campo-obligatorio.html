@@ -1,0 +1,54 @@
+<!-- Ejercicio 84: Validar que un campo obligatorio de un formulario no esté en blanco. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 84</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre"><br>
+        <span class="error">El campo Nombre es obligatorio.</span><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+            $('#frmDatos').submit(function(evento) {
+                let nombre = $('#nombre').val().trim();
+
+                if (nombre.length < 3) {
+                    $('.error').show();
+                    return;
+                }
+
+                $('.error').hide();
+
+                $('#resultado').text(`Su nombre es: ${nombre}`);
+            });
+        });
+    </script>
+</body>
+
+</html>
