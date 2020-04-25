@@ -1,0 +1,61 @@
+<!-- Ejercicio 77: Mostrar y ocultar texto con botones y las funciones show() y hide(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 77</title>
+
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="mostrarMusica">Música</button>
+    <button id="mostrarPeliculas">Películas</button>
+    <button id="mostrarVideojuegos">Vídeojuegos</button>
+    
+    
+    <p id="musica">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis ex congue metus imperdiet finibus. Pellentesque sed ipsum ullamcorper, pulvinar lacus in, euismod turpis. Vestibulum iaculis turpis sed enim sodales pretium. Praesent viverra accumsan venenatis. Curabitur molestie urna in neque ultricies eleifend. Sed sit amet lacinia eros, id accumsan massa. Nam volutpat augue dapibus fermentum iaculis. Phasellus fermentum enim at tellus ultricies lacinia. Fusce eget ex eu velit scelerisque vulputate. Nunc ut justo magna. Etiam mi risus, dictum id eleifend eu, varius semper sem.</p>
+
+    <p id="peliculas">Aenean eu lacus a turpis vehicula rhoncus ac eu augue. Proin ornare suscipit velit sit amet rhoncus. Maecenas metus erat, pharetra vel ultricies nec, cursus at orci. Aenean auctor erat in ligula eleifend cursus. Donec vulputate pulvinar feugiat. Nunc malesuada faucibus nisi ac imperdiet. Nulla facilisi. Aliquam condimentum accumsan felis, nec dignissim erat lacinia eu. Donec ornare purus quis justo hendrerit, sed mollis dui finibus. Maecenas quis gravida tellus, nec sollicitudin nulla. Curabitur in risus diam.</p>
+
+    <p id="videojuegos">Morbi sed nulla vitae arcu dapibus mollis. Pellentesque fringilla ipsum gravida, pretium quam et, luctus nunc. Mauris bibendum sagittis auctor. Ut ultricies leo id massa viverra ultricies. Quisque sodales quis quam non sodales. Morbi cursus hendrerit laoreet. Duis tristique hendrerit auctor. Integer est magna, pharetra a nisi nec, semper egestas ex.</p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#musica').hide();
+            $('#peliculas').hide();
+            $('#videojuegos').hide();
+
+            $('#mostrarMusica').click(function() {
+                $('#musica').show();
+                $('#peliculas').hide();
+                $('#videojuegos').hide();
+            });
+
+            $('#mostrarPeliculas').click(function() {
+                $('#peliculas').show();
+                $('#musica').hide();
+                $('#videojuegos').hide();
+            });
+
+            $('#mostrarVideojuegos').click(function() {
+                $('#videojuegos').show();
+                $('#musica').hide();
+                $('#peliculas').hide();
+            });
+        });
+    </script>
+</body>
+
+</html>
