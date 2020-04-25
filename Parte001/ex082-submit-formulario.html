@@ -1,0 +1,43 @@
+<!-- Ejercicio 82: Detectar el evento de submit de un formulario. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 82</title>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatosPersonales">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre"><br>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo"><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="datosPersonales"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#frmDatosPersonales').submit(function() {
+                let nombre = $('#nombre').val();
+                let correo = $('#correo').val();
+
+                console.log(correo);
+
+                $('#datosPersonales').text(`Nombre: ${nombre} - Correo: ${correo}`);
+            });
+        });
+    </script>
+</body>
+
+</html>
