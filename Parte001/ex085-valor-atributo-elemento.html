@@ -1,0 +1,37 @@
+<!-- Ejercicio 85: Obtener con attr() el valor de un atributo de un elemento. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 85</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <span id="mensajeError" class="error">Mensaje de error</span>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            let id = $('#mensajeError').attr('id');
+            console.log('id=', id);
+
+            let clase = $('#mensajeError').attr('class');
+            console.log('class=', clase);
+        });
+    </script>
+</body>
+
+</html>
