@@ -1,0 +1,32 @@
+<!-- Ejercicio 79: Ocultar un elemento HTML con la función slideup(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 79</title>
+</head>
+
+<body>
+
+    <button id="ocultarTexto">Ocultar texto</button>
+
+    <br>
+    
+    <span id="texto">¡jQuery es tremendo!</span>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#ocultarTexto').click(function() {
+                $('#texto').slideUp(5000);
+            });
+        });
+    </script>
+</body>
+
+</html>
