@@ -1,0 +1,32 @@
+<!-- Ejercicio 81: Detectar la función keypress() la tecla que el usuario ha presionado. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 81</title>
+</head>
+
+<body>
+
+    Nombre: <input type="text" id="nombre">
+
+    <br><br>
+
+    <span></span>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#nombre').keypress(function(evento) {
+                $('span').text(`Se ha presionado: ${evento.keyCode}`);
+            });
+        });
+    </script>
+</body>
+
+</html>
