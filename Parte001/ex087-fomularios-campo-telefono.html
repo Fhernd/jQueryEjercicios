@@ -1,0 +1,66 @@
+<!-- Ejercicio 87: Validar que un campo de un formulario corresponda con un número de teléfono. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 87</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono"><br>
+        <span class="error" id="campoObligatorio">El campo Teléfono es obligatorio.</span><br>
+        <span class="error" id="campoTelefono">El campo Teléfono sólo puede contener números 0-9, los signos + y -.</span><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmDatos').submit(function(evento) {
+                evento.preventDefault();
+
+                let telefono = $('#telefono').val().trim();
+
+                if (!telefono.length) {
+                    $('#campoObligatorio').show();
+                    return;
+                }
+
+                if (!validarTelefono(telefono)) {
+                    $('#campoTelefono').show();
+                    return;
+                }
+
+                $('#resultado').text(`El teléfono que ha escrito es: ${telefono}.`);
+            })
+        });
+
+        function validarTelefono(telefono) {
+            let patron = new RegExp(/^[0-9-+]+$/);
+            return patron.test(telefono);
+        }
+    </script>
+</body>
+
+</html>
