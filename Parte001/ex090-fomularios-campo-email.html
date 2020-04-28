@@ -1,0 +1,71 @@
+<!-- Ejercicio 90: Validar que un campo de un formulario corresponda con un correo electrónico. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 90</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        <label for="email">Email:</label>
+        <input type="text" id="email"><br>
+        <span class="error" id="obligatorio">El campo Email es obligatorio.</span><br>
+        <span class="error" id="patron">Ejemplo email: usuario@mail.com.</span><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmDatos').submit(function(evento) {
+                evento.preventDefault();
+                $('.error').hide();
+
+                let email = $('#email').val().trim();
+
+                if (!email.length) {
+                    $('#obligatorio').show();
+
+                    return;
+                }
+
+                if (!emailValido(email)) {
+                    $('#patron').show();
+
+                    return;
+                }
+
+                $('#resultado').text(`Su correo electrónico es: ${email}.`);
+            });
+        });
+
+        function emailValido(email) {
+            let patron = new RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/);
+
+            return patron.test(email);
+        }
+    </script>
+    
+</body>
+
+</html>
