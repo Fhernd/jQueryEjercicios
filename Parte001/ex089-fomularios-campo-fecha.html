@@ -1,0 +1,68 @@
+<!-- Ejercicio 89: Validar que un campo de un formulario corresponda con una fecha:. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 89</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        <label for="fecha">Fecha (AAAA-MM-DD):</label>
+        <input type="text" id="fecha"><br>
+        <span class="error" id="obligatorio">El campo Fecha es obligatorio.</span><br>
+        <span class="error" id="patron">El campo Fecha debe seguir este formato AAAA-MM-DD.</span><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmDatos').submit(function(evento) {
+                evento.preventDefault();
+                $('.error').hide();
+
+                let fecha = $('#fecha').val().trim();
+
+                if (!fecha.length) {
+                    $('#obligatorio').show();
+                    return;
+                }
+
+                if (!fechaValida(fecha)) {
+                    $('#patron').show();
+                    return;
+                }
+
+                $('#resultado').text(`La fecha es: ${fecha}`);
+            });
+        });
+
+        function fechaValida(fecha) {
+            let patron = new RegExp(/\b\d{4}-\d{2}-\d{2}\b/);
+            return patron.test(fecha);
+        }
+    </script>
+    
+</body>
+
+</html>
