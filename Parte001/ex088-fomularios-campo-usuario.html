@@ -1,0 +1,68 @@
+<!-- Ejercicio 88: Validar que un campo de un formulario corresponda con un nombre de usuario:. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 88</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        <label for="usuario">Nombre de usuario:</label>
+        <input type="text" id="usuario"><br>
+        <span class="error" id="obligatorio">El campo Nombre de usuario es obligatorio.</span><br>
+        <span class="error" id="patron">El campo Nombre de usuario sólo puede contener números 0-9, letras a-z, y guión al piso (_).</span><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmDatos').submit(function(evento) { 
+                evento.preventDefault();
+
+                let usuario = $('#usuario').val().trim();
+
+                if (!usuario.length) {
+                    $('#obligatorio').show();
+                    return;
+                }
+
+                if (!nombreUsuarioValido(usuario)) {
+                    $('#patron').show();
+                    return;
+                }
+
+                $('.error').hide();
+
+                $('#resultado').text(`Su nombre de usuario es: ${usuario}`);
+            });
+        });
+
+        function nombreUsuarioValido(usuario) {
+            let patron = new RegExp(/^[a-z50-9_]+$/);
+            return patron.test(usuario);
+        }
+    </script>
+</body>
+
+</html>
