@@ -1,0 +1,61 @@
+<!-- Ejercicio 86: Validar que un campo de un formulario contenga únicamente números. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 86</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        <label for="edad">Edad</label>
+        <input type="text" id="edad"><br>
+        <span class="error" id="campoObligatorio">El campo Edad es obligatorio.</span><br>
+        <span class="error" id="campoNumerico">El campo Edad debe ser un número.</span><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+            $('#frmDatos').submit(function(evento) {
+                evento.preventDefault();
+
+                let edad = $('#edad').val().trim();
+
+                if(!edad.length) {
+                    $('#campoObligatorio').show();
+                    return;
+                }
+
+                edad = parseInt(edad);
+
+                if(!edad) {
+                    $('#campoNumerico').show();
+                    return;
+                }
+
+                $('#resultado').text(`El valor escrito en el campo Edad es igual a ${edad}.`);
+            });
+        });
+    </script>
+</body>
+
+</html>
