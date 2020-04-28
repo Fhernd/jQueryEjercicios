@@ -1,0 +1,69 @@
+<!-- Ejercicio 91: Comprobar si un elemento HTML checkbox está marcado. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 91</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        Opciones: <br>
+        <input type="checkbox" name="python" id="python">Python <br>
+        <input type="checkbox" name="cpp" id="cpp">C++ <br>
+        <input type="checkbox" name="javascript" id="javascript">JavaScript <br>
+        <input type="checkbox" name="c" id="c">C <br>
+        <input type="checkbox" name="csharp" id="csharp">C# <br>
+
+        <span class="error" id="obligatorio">Debe seleccionar al menos un lenguaje.</span><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmDatos').submit(function(evento) {
+                evento.preventDefault();
+
+                $('.error').hide();
+
+                let contador = 0;
+
+                $(this).find(':checkbox').each(function() {
+                    if ($(this).is(':checked')) {
+                        ++contador;
+                    }
+                });
+
+                if (!contador) {
+                    $('#obligatorio').show();
+                    return;
+                }
+
+                $('#resultado').text('Los datos del formulario se han enviado satisfactoriamente.');
+            });
+        });
+    </script>
+</body>
+
+</html>
