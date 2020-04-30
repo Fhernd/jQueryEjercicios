@@ -1,0 +1,80 @@
+<!-- Ejercicio 95: Usar un elemento checkbox para seleccionar o desmarcar varios checkboxes. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 95</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        Opciones: <br>
+        <input type="checkbox" name="python" id="python" value="Python" class="opcion">Python <br>
+        <input type="checkbox" name="cpp" id="cpp" value="C++" class="opcion">C++ <br>
+        <input type="checkbox" name="javascript" id="javascript" value="JavaScript" class="opcion">JavaScript <br>
+        <input type="checkbox" name="c" id="c" value="C" class="opcion">C <br>
+        <input type="checkbox" name="csharp" id="csharp" value="C#" class="opcion">C# <br>
+        <br>
+
+        <input type="checkbox" id="marcarTodas"> Seleccionar todos los lenguajes
+
+        <br>
+
+        <span class="error" id="obligatorio">Debe seleccionar al menos un lenguaje.</span><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmDatos').submit(function (evento) {
+                evento.preventDefault();
+
+                $('.error').hide();
+
+                let contador = $('input:checked').length;
+
+                if (!contador) {
+                    $('.error').show();
+                    $('#resultado').text('');
+                    return;
+                }
+
+                let resultado = '';
+
+                $('.opcion').each(function (indice, opcion) {
+                    if ($(opcion).is(':checked')) {
+                        resultado += $(opcion).attr('value') + ', ';
+                    }
+                });
+
+                $('#resultado').text(`Los lenguajes que ud. ha seleccionado son: ${resultado}.`);
+            });
+
+            $('#marcarTodas').click(function () {
+                $('input[type="checkbox"]').attr('checked', $('#marcarTodas').is(':checked'));
+            });
+        });
+    </script>
+</body>
+
+</html>
