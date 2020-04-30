@@ -1,0 +1,61 @@
+<!-- Ejercicio 92: Comprobar si un elemento HTML radio está seleccionado. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 92</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        Lenguaje de programación favorito: <br>
+        <input type="radio" name="lenguajeFavorito" id="python" value="Python">Python <br>
+        <input type="radio" name="lenguajeFavorito" id="cpp" value="C++">C++ <br>
+        <input type="radio" name="lenguajeFavorito" id="javascript" value="JavaScript">JavaScript <br>
+        <input type="radio" name="lenguajeFavorito" id="c" value="C">C <br>
+        <input type="radio" name="lenguajeFavorito" id="csharp" value="C#">C# <br>
+
+        <span class="error" id="obligatorio">Debe seleccionar un lenguaje.</span><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmDatos').submit(function(evento) {
+                evento.preventDefault();
+                $('.error').hide();
+
+                let contador = $('input:checked').length;
+
+                if (contador) {
+                    $('#resultado').text(`Su lenguaje de programación favorito es: ${$('input:checked').attr('value')}`);
+                } else {
+                    $('.error').show();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
