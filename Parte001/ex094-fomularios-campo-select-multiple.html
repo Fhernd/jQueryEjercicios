@@ -1,0 +1,72 @@
+<!-- Ejercicio 94: Seleccionar varios elementos desde un elemento HTML select. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 94</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        <label for="lenguaje">Lenguaje:</label>
+        <select id="lenguaje" multiple>
+            <option value="python">Python</option>
+            <option value="cpp">C++</option>
+            <option value="javascript">JavaScript</option>
+            <option value="c">C</option>
+            <option value="csharp">C#</option>
+        </select>
+
+        <br>
+
+        <span class="error" id="obligatorio">Debe seleccionar al menos un lenguaje.</span><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmDatos').submit(function(evento) {
+                evento.preventDefault();
+                $('.error').hide();
+
+                let contador = $('select option:selected').length;
+
+                if (!contador) {
+                    $('.error').show();
+                    return;
+                }
+
+                let lenguajes = '';
+
+                $('select option:selected').each(function() {
+                    lenguajes += `${$(this).text()}, `;
+                });
+
+                $('#resultado').text(`Ud. ha seleccionado los siguientes lenguajes: ${lenguajes}`);
+            });
+        });
+    </script>
+</body>
+
+</html>
