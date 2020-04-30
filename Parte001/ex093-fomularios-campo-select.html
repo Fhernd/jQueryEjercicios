@@ -1,0 +1,66 @@
+<!-- Ejercicio 93: Comprobar si una opción de un elemento select está seleccionado. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 93</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" id="frmDatos">
+        <label for="lenguaje">Lenguaje:</label>
+        <select id="lenguaje">
+            <option value="0">Seleccione un lenguaje</option>
+            <option value="python">Python</option>
+            <option value="cpp">C++</option>
+            <option value="javascript">JavaScript</option>
+            <option value="c">C</option>
+            <option value="csharp">C#</option>
+        </select>
+
+        <br>
+
+        <span class="error" id="obligatorio">Debe seleccionar un lenguaje.</span><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmDatos').submit(function(evento) { 
+                evento.preventDefault();
+                $('.error').hide();
+
+                let opcion = $('select option:selected').val();
+
+                if (opcion != 0) {
+                    $('#resultado').text(`Su lenguaje de programación favorito es: ${$('select option:selected').text()}`);
+                } else {
+                    $('.error').show();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
