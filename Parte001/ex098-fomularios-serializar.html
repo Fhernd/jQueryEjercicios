@@ -1,0 +1,105 @@
+<!-- Ejercicio 98: Serializar los datos de un formulario con la función serialize(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 98</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Registro de usuario</h3>
+    <form action="#" id="frmRegistro">
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email"> <br>
+
+        <label for="clave">Contraseña:</label> 
+        <input type="password" id="clave" disabled name="clave"> <br>
+        <label for="claveRepetir">Contraseña (repetir): </label>
+        <input type="password" id="claveRepetir" disabled name="claveRepetir">
+
+        <span class="error" id="obligatorio"></span>
+
+        <br>
+
+        <input type="submit" value="Enviar" disabled id="btnEnviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+    <p id="datosSerializados"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#email').keyup(function(evento) {
+                let email = $(this).val();
+
+                if (emailValido(email)) {
+                    $('#clave').attr('disabled', false);
+                } else {
+                    $('#clave').attr('disabled', true);
+                }
+            });
+
+            $('#clave').keyup(function(evento) {
+                let clave = $(this).val();
+
+                if (clave.length >= 5) {
+                    $('#claveRepetir').attr('disabled', false);
+                } else {
+                    $('#claveRepetir').attr('disabled', true);
+                }
+            });
+
+            $('#claveRepetir').keyup(function(evento) {
+                let clave = $(this).val();
+
+                if (clave.length >= 5) {
+                    if (clave == $('#clave').val()) {
+                        $('#btnEnviar').attr('disabled', false);
+                    } else {
+                        $('#btnEnviar').attr('disabled', true);
+                    }
+                } else {
+                    $('#btnEnviar').attr('disabled', true);
+                }
+            });
+
+            $('#btnEnviar').click((evento) => {
+                evento.preventDefault();
+
+                $('#resultado').text('El registro se ha realizado de forma satisfactoria.');
+
+                let datos = $('#frmRegistro').serialize();
+
+                $('#datosSerializados').text(datos);
+
+                return false;
+            });
+        });
+
+        function emailValido(email) {
+            let patron = RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/)
+
+            return patron.test(email);
+        }
+    </script>
+</body>
+
+</html>
