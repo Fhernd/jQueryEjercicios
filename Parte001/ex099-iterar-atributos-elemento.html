@@ -1,0 +1,37 @@
+<!-- Ejercicio 99: Iterar por cada uno de los atributos de un elemento HTML. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 99</title>
+
+    <style>
+        .error {
+            color: red;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" class="error" id="mensajeError" name="mensajeError">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('input').each(function() {
+                $.each(this.attributes, function(i, a) {
+                    console.log(`Nombre: ${a.name} - Valor: ${a.value}`);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
