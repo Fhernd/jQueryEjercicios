@@ -1,0 +1,55 @@
+<!-- Ejercicio 102: Obtener los elementos hijos de un elemento HTML con la función children(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 102</title>
+
+    <style>
+        .contenedor {
+            background-color: crimson;
+            border: 2px dashed black;
+            width: 400px;
+            height: 600px;
+        }
+
+        .seccion {
+            font-size: 20px;
+            background-color: aqua;
+            border: 3px solid black;
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div>
+            Sección #1
+        </div>
+        <div>
+            Sección #2
+        </div>
+    </div>
+
+    <br>
+    <button id="resaltarSecciones">Resaltar secciones</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('#resaltarSecciones').click(function() {
+                $('.contenedor').children().addClass('seccion');
+            });
+        });
+    </script>
+</body>
+
+</html>
