@@ -1,4 +1,4 @@
-<!-- Ejercicio 100: Obtener con las funciones width() y height() el ancho y alto de un elemento HTML. -->
+<!-- Ejercicio 101: Obtener el elemento padre de un elemento HTML con la función parent(). -->
 
 <!DOCTYPE html>
 <html lang="es">
@@ -10,31 +10,41 @@
     <title>jQuery - Ejercicio 100</title>
 
     <style>
-        #cuadrado {
+        .contenedor {
             background-color: crimson;
             border: 2px dashed black;
-            width: 300px;
-            height: 500px;
+            width: 400px;
+            height: 400px;
+        }
+
+        .seccion {
+            background-color: aqua;
+            border: 3px solid black;
+            margin: 10px;
+            width: 200px;
+            height: 200px;
         }
     </style>
 </head>
 
 <body>
 
-    <div id="cuadrado">
-
+    <div>
+        <div class="seccion">
+            Sección
+        </div>
     </div>
 
-    <p id="resultado"></p>
+    <br>
+    <button id="resaltarContenedor">Resaltar contenedor</button>
 
     <script src="js/jquery-3.4.1.min.js"></script>
 
     <script>
         $(document).ready(() => {
-            let resultado = `Ancho: ${$('#cuadrado').width()}px - `;
-            resultado += `Alto: ${$('#cuadrado').height()}px`
-
-            $('#resultado').text(resultado);
+            $('#resaltarContenedor').click(function() {
+                $('.seccion').parent().addClass('contenedor');
+            });
         });
     </script>
 </body>
