@@ -1,0 +1,43 @@
+<!-- Ejercicio 108: Uso de la función eq() para seleccionar un elemento entre un conjunto. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 108</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C++</li>
+        <li>C#</li>
+    </ul>
+
+    <br>
+
+    <input type="number" id="posicion" min="0" max="4">
+    <button id="btnResaltar">Resaltar</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#btnResaltar').click(() => {
+                $('li').css('background-color', 'white');3
+
+                let indice = parseInt($('#posicion').val());
+
+                $('li').eq(indice).css('background-color', 'yellow');
+            });
+        });
+    </script>
+</body>
+
+</html>
