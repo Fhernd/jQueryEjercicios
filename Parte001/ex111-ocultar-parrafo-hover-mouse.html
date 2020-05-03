@@ -1,0 +1,35 @@
+<!-- Ejercicio 111: Ocultar un elemento cuando el mouse ingrese al área del mismo. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 111</title>
+</head>
+
+<body>
+
+    <h3>JavaScript</h3>
+
+    <p>¡JavaScript es tremendo!</p>
+    <p>jQuery es una librería para manipular el DOM.</p>
+    <p>JavaScript se ejecuta en el navegador Web.</p>
+    <p>Uso de la función filter() de jQuery.</p>
+
+    <h3>jQuery</h3>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('p').mouseenter(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+</body>
+
+</html>
