@@ -1,0 +1,40 @@
+<!-- Ejercicio 117: Usar la función animate() para aplicar varias animaciones a un elemento. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 117</title>
+
+    <style>
+        .cuadrado {
+            background-color: crimson;
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cuadrado"></div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.cuadrado').animate({
+                height: '500px',
+                width: '500px',
+                opacity: '0.4'
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
