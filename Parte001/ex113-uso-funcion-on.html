@@ -1,0 +1,39 @@
+<!-- Ejercicio 113: Uso de la función on() para asociar un evento a un elemento HTML. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 113</title>
+</head>
+
+<body>
+
+    <h3>JavaScript</h3>
+
+    <p>¡JavaScript es tremendo!</p>
+    <p>jQuery es una librería para manipular el DOM.</p>
+    <p>JavaScript se ejecuta en el navegador Web.</p>
+    <p>Uso de la función filter() de jQuery.</p>
+
+    <h3>jQuery</h3>
+
+    <br>
+
+    <button id="resaltar">Resaltar</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#resaltar').on('click', function() {
+                $('p').css('background-color', 'yellow');
+            });
+        });
+    </script>
+</body>
+
+</html>
