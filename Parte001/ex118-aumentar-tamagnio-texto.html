@@ -1,0 +1,37 @@
+<!-- Ejercicio 118: Usar la función animate() para aumentar el tamaño de fuente de un elemento HTML. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 118</title>
+
+    <style>
+        .cuadrado {
+            color: white;
+            background-color: crimson;
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cuadrado">¡jQuery es tremendo!</div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.cuadrado').animate({'font-size': '30px'}, 5000);
+        });
+    </script>
+</body>
+
+</html>
