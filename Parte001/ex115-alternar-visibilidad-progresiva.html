@@ -1,0 +1,35 @@
+<!-- Ejercicio 115: Usar la función fadeToggle() para alternar la visibilidad progresiva de un elemento HTML. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 115</title>
+</head>
+
+<body>
+
+    <p>¡JavaScript es tremendo!</p>
+    <p>jQuery es una librería para manipular el DOM.</p>
+    <p>JavaScript se ejecuta en el navegador Web.</p>
+    <p>Uso de la función toggle() de jQuery.</p>
+
+    <br>
+
+    <button id="alternarVisibilidad">Alternar visibilidad</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#alternarVisibilidad').on('click', function() {
+                $('p').fadeToggle(3000);
+            });
+        });
+    </script>
+</body>
+
+</html>
