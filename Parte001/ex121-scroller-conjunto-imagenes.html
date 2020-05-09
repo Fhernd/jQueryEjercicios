@@ -1,0 +1,43 @@
+<!-- Ejercicio 121: Crear un slider de imágenes con disposición horizontal. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 121</title>
+
+    <style>
+        img {
+            width: 128px;
+            height: 128px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="slider">
+        <div id="imagenes">
+            <a href="#"><img src="img/js-logo.png" alt="JavaScript"></a>
+            <a href="#"><img src="img/java-logo.png" alt="Java"></a>
+            <a href="#"><img src="img/jquery-logo.png" alt="jQuery"></a>
+            <a href="#"><img src="img/angular-logo.png" alt="Angular"></a>
+            <a href="#"><img src="img/nodejs-logo.png" alt="Node.js"></a>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#slider').css({'margin': 'auto', 'width': '450px', 'height': '160px', 'overflow': 'scroll'});
+
+            $('#imagenes').css('width', '800px');
+        });
+    </script>
+</body>
+
+</html>
