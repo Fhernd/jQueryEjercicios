@@ -1,0 +1,27 @@
+<!-- Ejercicio 123: Obtener el enlace de un elemento HTML tipo enlace (a). -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ejercicio 123</title>
+</head>
+<body>
+    
+    <a href="https://ortizol.blogspot.com/">OrtizOL - Experiencias Construcción Software (xCSw)</a>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            let url = $('a').attr('href');
+
+            $('#resultado').text(url);
+        });
+    </script>
+
+</body>
+</html>
