@@ -1,0 +1,46 @@
+<!-- Ejercicio 119: Organizar un conjunto de imágenes de forma horizontal. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 119</title>
+
+    <style>
+        img {
+            width: 128px;
+            height: 128px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="imagenes">
+        <a href="#"><img src="img/js-logo.png" alt="JavaScript"></a>
+        <a href="#"><img src="img/java-logo.png" alt="Java"></a>
+        <a href="#"><img src="img/jquery-logo.png" alt="jQuery"></a>
+        <a href="#"><img src="img/angular-logo.png" alt="Angular"></a>
+        <a href="#"><img src="img/nodejs-logo.png" alt="Node.js"></a>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+       $(document).ready(() => {
+            let imagenes = $('#imagenes a');
+            
+            let cantidadImagenes = imagenes.length;
+
+            for (let i = 0; i < cantidadImagenes; i++) {
+                let imagen = imagenes.eq(i);
+                imagen.css({'position': 'absolute', 'left': 138 * i});
+            }
+       });
+    </script>
+</body>
+
+</html>
