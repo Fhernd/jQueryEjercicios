@@ -1,0 +1,49 @@
+<!-- Ejercicio 126: Desplazar una imagen al centro geométrico de la ventana del navegador. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ejercicio 126</title>
+
+    <style>
+        .contenedor {
+            width: 80%;
+            height: 80%;
+            position: absolute;    
+            margin:auto;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="contenedor">
+        <img src="img/angular-logo.png" alt="Angular - Logo" width="128px">
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            setTimeout(() => {
+                $('img').css({
+                    'top': 0,
+                    'bottom': 0,
+                    'left': 0,
+                    'right': 0,
+                    'margin': 'auto',
+                    'position': 'absolute',
+                    'max-height': '100%',
+                    'max-width': '100%'
+                });
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
