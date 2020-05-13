@@ -1,0 +1,33 @@
+<!-- Ejercicio 124: Desplazar una imagen hacia la izquierda y luego hacer que desaparezca. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ejercicio 124</title>
+
+    <style>
+        img {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="img/angular-logo.png" alt="Angular - Logo" width="128px" style="left: 600px;">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('img').animate({'left': '140px'}, 5000, function() {
+                $('img').click(() => {
+                    $('img').hide();
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
