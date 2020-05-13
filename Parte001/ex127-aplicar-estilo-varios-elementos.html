@@ -1,0 +1,35 @@
+<!-- Ejercicio 127: Aplicar una clase CSS a múltiples elementos. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ejercicio 127</title>
+
+    <style>
+        .resaltar {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="javascript">JavaScript</p>
+    <p id="cpp">C++</p>
+    <p id="jquery">jQuery</p>
+    <p id="angular">Angular</p>
+    <p id="php">PHP</p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            setTimeout(() => {
+                $('#javascript,#jquery,#angular').addClass('resaltar');
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>
