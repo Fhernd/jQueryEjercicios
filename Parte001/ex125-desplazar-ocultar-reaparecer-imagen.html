@@ -1,0 +1,34 @@
+<!-- Ejercicio 125: Desplazar, ocultar y hacer que reaparezca una imagen. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ejercicio 125</title>
+
+    <style>
+        img {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="img/angular-logo.png" alt="Angular - Logo" width="128px" style="left: 600px;">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('img').click(function() {
+                $(this).animate({'left': '-140px'}, 2000, function() {
+                    $(this).css('left', 300);
+                    $(this).animate({'left': '0px'});
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
