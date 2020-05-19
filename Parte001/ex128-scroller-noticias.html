@@ -1,0 +1,62 @@
+<!-- Ejercicio 128: Crear un scroller vertical para un texto con la función animate. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ejercicio 128</title>
+
+    <style>
+        .scroller {
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+            border: 2px solid;
+            padding: 12px;
+        }
+
+        .scroller p {
+            font-weight: lighter;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="scroller">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis ex congue metus imperdiet finibus. Pellentesque sed ipsum ullamcorper, pulvinar lacus in, euismod turpis. Vestibulum iaculis turpis sed enim sodales pretium. Praesent viverra accumsan venenatis. Curabitur molestie urna in neque ultricies eleifend. Sed sit amet lacinia eros, id accumsan massa. Nam volutpat augue dapibus fermentum iaculis. Phasellus fermentum enim at tellus ultricies lacinia. Fusce eget ex eu velit scelerisque vulputate. Nunc ut justo magna. Etiam mi risus, dictum id eleifend eu, varius semper sem.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis ex congue metus imperdiet finibus. Pellentesque sed ipsum ullamcorper, pulvinar lacus in, euismod turpis. Vestibulum iaculis turpis sed enim sodales pretium. Praesent viverra accumsan venenatis. Curabitur molestie urna in neque ultricies eleifend. Sed sit amet lacinia eros, id accumsan massa. Nam volutpat augue dapibus fermentum iaculis. Phasellus fermentum enim at tellus ultricies lacinia. Fusce eget ex eu velit scelerisque vulputate. Nunc ut justo magna. Etiam mi risus, dictum id eleifend eu, varius semper sem.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis ex congue metus imperdiet finibus. Pellentesque sed ipsum ullamcorper, pulvinar lacus in, euismod turpis. Vestibulum iaculis turpis sed enim sodales pretium. Praesent viverra accumsan venenatis. Curabitur molestie urna in neque ultricies eleifend. Sed sit amet lacinia eros, id accumsan massa. Nam volutpat augue dapibus fermentum iaculis. Phasellus fermentum enim at tellus ultricies lacinia. Fusce eget ex eu velit scelerisque vulputate. Nunc ut justo magna. Etiam mi risus, dictum id eleifend eu, varius semper sem.
+        </p>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            let parrafos = $('.scroller p');
+            parrafos.css({'top': 0});
+
+            const animacion = function(elemento) {
+                elemento.animate({top: -500}, 20000, 
+                function() {
+                    elemento.css({top: 10});
+                });
+                animacion(elemento);
+            }
+
+            animacion(parrafos);
+        });
+    </script>
+</body>
+</html>
