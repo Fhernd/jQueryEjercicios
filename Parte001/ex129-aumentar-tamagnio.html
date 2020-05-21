@@ -1,0 +1,48 @@
+<!-- Ejercicio 129: Aumentar la maniatura de una imagen con el cursor del mouse. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 129</title>
+
+    <style>
+        #imagenesMiniatura img {
+            width: 256px;
+            height: 256px;
+            margin: 50px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="imagenesMiniatura">
+        <a href="#"><img src="img/js-logo.png" alt="JavaScript"></a>
+        <a href="#"><img src="img/java-logo.png" alt="Java"></a>
+        <a href="#"><img src="img/jquery-logo.png" alt="jQuery"></a>
+        <a href="#"><img src="img/angular-logo.png" alt="Angular"></a>
+        <a href="#"><img src="img/nodejs-logo.png" alt="Node.js"></a>
+    </div>
+
+    <img src="img/js-logo.png" alt="JS Logo" class="imagenGrande">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#imagenesMiniatura a').hover(function() {
+                let rutaImagen = $(this).children().attr('src');
+                $('.imagenGrande').fadeTo('slow', 0, function() {
+                    $('.imagenGrande').attr('src', rutaImagen);
+                }).fadeTo('slow', 1);
+            });
+        });
+    </script>
+</body>
+
+</html>
