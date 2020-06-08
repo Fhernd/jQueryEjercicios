@@ -1,0 +1,76 @@
+<!-- Ejercicio 130: Crear paginación para un conjunto de imágenes. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 130</title>
+
+    <style>
+        .pagina {
+            margin: 5px;
+        }
+
+        .hover {
+            color: blue;
+            background-color: dodgerblue;
+        }
+
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="imagenes">
+        <a href="#"><img src="img/js-logo.png" alt="JavaScript"></a>
+        <a href="#"><img src="img/java-logo.png" alt="Java"></a>
+        <a href="#"><img src="img/jquery-logo.png" alt="jQuery"></a>
+        <a href="#"><img src="img/angular-logo.png" alt="Angular"></a>
+        <a href="#"><img src="img/nodejs-logo.png" alt="Node.js"></a>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            let imagenes = $('#imagenes a');
+            imagenes.hide();
+
+            let cantidadImagenes = imagenes.length;
+
+            let siguiente = imagenes.eq(0);
+            siguiente.css({position: 'absolute', left: 10});
+            siguiente.show();
+
+            let paginacion = $('<div id="paginas"></div>');
+
+            for(let i = 0; i < cantidadImagenes; ++i) {
+                $(`<span class="pagina">${i + 1}</span>`).appendTo(paginacion);
+            }
+
+            paginacion.insertBefore(siguiente);
+
+            $('.pagina').hover(function() {
+                $(this).addClass('hover');
+            }, function() {
+                $(this).removeClass('hover');
+            });
+
+            $('span').click(function() {
+                imagenes.hide();
+
+                siguiente = imagenes.eq($(this).text() - 1);
+
+                siguiente.show();
+            });
+        });
+    </script>
+</body>
+
+</html>
