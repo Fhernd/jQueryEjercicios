@@ -1,0 +1,47 @@
+<!-- Ejercicio 131: Detener una animación con el método stop(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 131</title>
+
+    <style>
+        .bloque {
+            position: absolute;
+            background-color: crimson;
+            left: 0px;
+            top: 30;;
+            width: 80px;
+            height: 80px;
+            margin: 7px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="iniciar">Iniciar</button>
+    <button id="detener">Detener</button>
+
+    <div class="bloque"></div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#iniciar').click(() => {
+                $('.bloque').animate({left: '+=100px'}, 5000);
+            })
+
+            $('#detener').click(() => {
+                $('.bloque').stop();
+            });
+        });
+    </script>
+</body>
+
+</html>
