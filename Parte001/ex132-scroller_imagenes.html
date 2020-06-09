@@ -1,0 +1,94 @@
+<!-- Ejercicio 132: Crear un scroller para desplazar imágenes en cualquier dirección. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 132</title>
+
+    <style>
+        .scroller {
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+            width: 460px;
+            height: 150px;
+        }
+
+        #imagenes {
+            width: 770px;
+        }
+
+        #imagenes a img {
+            position: relative;
+            border: 0;
+            width: 150px;
+        }
+
+        #direccion {
+            display: inline;
+            margin: auto;
+        }
+
+        .flecha-izquierda {
+            margin-top: 10px;
+        }
+
+        .flecha-derecha {
+            margin-top: 10px;
+            margin-left: 390px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="scroller">
+        <div id="imagenes">
+            <a href="#"><img src="img/js-logo.png" alt="JavaScript"></a>
+
+            <a href="#"><img src="img/java-logo.png" alt="Java"></a>
+
+            <a href="#"><img src="img/jquery-logo.png" alt="jQuery"></a>
+
+            <a href="#"><img src="img/angular-logo.png" alt="Angular"></a>
+
+            <a href="#"><img src="img/nodejs-logo.png" alt="Node.js"></a>
+        </div>
+    </div>
+
+    <div id="direccion">
+        <img src="img/flecha_izquierda.png" class="flecha-izquierda">
+        <img src="img/flecha_derecha.png" class="flecha-derecha">
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            let imagenes = $('#scroller a img');
+
+            let animacionIzquierda = function(elemento) {
+                elemento.animate({left: -310}, 2000);
+            }
+
+            let animacionDerecha = function(elemento) {
+                elemento.animate({left: 0}, 2000);
+            }
+
+            $('.flecha-izquierda').click(function(evento) {
+                animacionIzquierda(imagenes);
+                evento.preventDefault();
+            });
+
+            $('.flecha-derecha').click(function(evento) {
+                animacionDerecha(imagenes);
+                evento.preventDefault();
+            });
+        });
+    </script>
+</body>
+
+</html>
