@@ -1,0 +1,66 @@
+<!-- Ejercicio 133: Crear un scroller tipo péndulo para un conjunto de imágenes. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 133</title>
+
+    <style>
+        .scroller {
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+            width: 460px;
+            height: 150px;
+        }
+
+        #imagenes {
+            width: 770px;
+        }
+
+        #imagenes a img {
+            position: relative;
+            border: 0;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="scroller">
+        <div id="imagenes">
+            <a href="#"><img src="img/js-logo.png" alt="JavaScript"></a>
+
+            <a href="#"><img src="img/java-logo.png" alt="Java"></a>
+
+            <a href="#"><img src="img/jquery-logo.png" alt="jQuery"></a>
+
+            <a href="#"><img src="img/angular-logo.png" alt="Angular"></a>
+
+            <a href="#"><img src="img/nodejs-logo.png" alt="Node.js"></a>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            let imagenes = $('#imagenes a img');
+
+            let animacionPendulo = function() {
+                imagenes.animate({left: -780}, 5000, function() {
+                    imagenes.animate({left: 480}, 5000);
+                    animacionPendulo();
+                });
+            }
+
+            animacionPendulo();
+        });
+    </script>
+</body>
+
+</html>
