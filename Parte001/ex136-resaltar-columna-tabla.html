@@ -1,0 +1,66 @@
+<!-- Ejercicio 136: Resaltar las columnas impares de una tabla. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 136</title>
+
+    <style>
+        .resaltar {
+            background-color: lightgray;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Versión</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>JavaScript</td>
+                <td>ES6</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Python</td>
+                <td>3.8.1</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Java</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>C++</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>C#</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('td:nth-child(odd)').addClass('resaltar');
+            $('th:nth-child(odd)').addClass('resaltar');
+        });
+    </script>
+</body>
+
+</html>
