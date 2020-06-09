@@ -1,0 +1,80 @@
+<!-- Ejercicio 141: Ocultar una columna (atributo) de un elemento table (tabla). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 141</title>
+
+    <style>
+        .resaltar {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Versión</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>JavaScript</td>
+                <td>ES6</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Python</td>
+                <td>3.8.1</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Java</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>C++</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>C#</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('th').hover(function() {
+                let indiceColumna = $(this).parent().children().index(this);
+                $(this).addClass('resaltar');
+
+                $(`table td:nth-child(${indiceColumna + 1})`).addClass('resaltar');
+            }, function() {
+                $('table tr').children().removeClass('resaltar');
+            });
+
+            $('th').click(function() {
+                $(this).hide();
+
+                let indiceColumna = $(this).parent().children().index(this);
+
+                $(`table td:nth-child(${indiceColumna + 1})`).hide();
+            });
+        });
+    </script>
+</body>
+
+</html>
