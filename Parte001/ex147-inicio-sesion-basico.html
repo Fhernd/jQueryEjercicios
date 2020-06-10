@@ -1,0 +1,56 @@
+<!-- Ejercicio 147: Inicio de sesión básico con una solicitud Ajax (POST). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 147</title>
+</head>
+
+<body>
+    <form id="frmDatosLogin">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" required/><br>
+        <label for="clave">Clave:</label>
+        <input type="password" id="clave"/ required><br>
+        <input type="submit" value="Enviar" id="enviar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#enviar').click(function() {
+                let usuario = $('#usuario').val().trim();
+                let clave = $('#clave').val().trim();
+
+                if (usuario && clave) {
+                    let dato = `usuario=${usuario};clave=${clave}`;
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://localhost:8080/login-basico',
+                        data: {usuario: usuario, clave: clave}
+                    }).done((data) => {
+                        $('#resultado').text(data);
+                    }).fail((error) => {
+                        console.warn(error);
+                    });
+                } else {
+                    $('#resultado').text('Los campos son obligatorios.');
+                }
+
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
