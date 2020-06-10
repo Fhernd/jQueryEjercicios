@@ -1,0 +1,87 @@
+<!-- Ejercicio 144: Ordenar una tabla (table) a partir de sus columnas. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 144</title>
+
+    <style>
+        .resaltar {
+            cursor: default;
+            background-color: yellow;
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Versión</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>Python</td>
+                <td>3.8.1</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>C#</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>JavaScript</td>
+                <td>ES6</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>C++</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Java</td>
+                <td>14</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('th').each(function(columna) {
+                $(this).hover(function() {
+                    $(this).addClass('resaltar');
+                }, function() {
+                    $(this).removeClass('resaltar');
+                });
+
+                $(this).click(function() {
+                    let registros = $('table').find('tbody > tr').get();
+
+                    registros.sort(function(a, b) {
+                        let valor1 = $(a).children('td').eq(columna).text().toUpperCase();
+                        let valor2 = $(b).children('td').eq(columna).text().toUpperCase();
+
+                        return valor1 < valor2 ? -1 : valor1 > valor2 ? 1 : 0;
+                    });
+
+                    $.each(registros, function(indice, elemento) {
+                        $('tbody').append(elemento);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
