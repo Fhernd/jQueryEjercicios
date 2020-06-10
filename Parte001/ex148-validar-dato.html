@@ -1,0 +1,47 @@
+<!-- Ejercicio 148: Validar el nombre de usuario por medio de una solicitud Ajax (GET). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 148</title>
+</head>
+
+<body>
+    <form>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" required/><br>
+        <input type="submit" value="Validar" id="validar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    </script>
+
+    <script>
+        $(document).ready(() => {
+            $('#validar').click(function() {
+                let usuario = $('#usuario').val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://localhost:8080/validar-usuario/' + usuario
+                }).done((resultado) => {
+                    $('#resultado').text(resultado);
+                }).fail((error) => {
+                    console.warn(error);
+                });
+
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
