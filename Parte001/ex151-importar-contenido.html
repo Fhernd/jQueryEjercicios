@@ -1,0 +1,32 @@
+<!-- Ejercicio 151: Importar contenido de otro archivo HTML con la función load(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 151</title>
+</head>
+
+<body>
+
+    <button id="importarContenido">Importar contenido</button>
+
+    <br/><br/>
+
+    <div id="contenido"></div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#importarContenido').click(function() {
+                $('#contenido').load('ex151-contenido.html');
+            });
+        });
+    </script>
+</body>
+
+</html>
