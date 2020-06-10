@@ -1,0 +1,42 @@
+<!-- Ejercicio 143: Ordenar alfabéticamente los elementos de una lista. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 143</title>
+</head>
+
+<body>
+    <ul id="lenguajes">
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>C++</li>
+        <li>C#</li>
+    </ul>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            let lenguajes = $('ul').children('li').get();
+
+            lenguajes.sort(function(a, b) {
+                let lenguaje1 = $(a).text().toUpperCase();
+                let lenguaje2 = $(b).text().toUpperCase();
+
+                return lenguaje1 < lenguaje2 ? -1 : (lenguaje1 > lenguaje2) ? 1 : 0;
+            });
+
+            $.each(lenguajes, function(indice, elemento) {
+                $('#lenguajes').append(elemento);
+            });
+        });
+    </script>
+</body>
+
+</html>
