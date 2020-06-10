@@ -1,0 +1,50 @@
+<!-- Ejercicio 146: Mostrar un mensaje de bienvenida con una solicitud Ajax. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 146</title>
+</head>
+
+<body>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre"/><br>
+        <input type="submit" value="Enviar" id="enviar">
+    </form>
+
+    <br>
+
+    <p id="bienvenida"></p>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#enviar').click(function() {
+                let nombre = $('#nombre').val().trim();
+
+                if (nombre) {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'http://localhost:8080/bienvenida/' + nombre
+                    }).done((mensaje) => {
+                        $('#bienvenida').text(mensaje);
+                    }).fail((error) => {
+                        console.log(error);
+                    });
+                } else {
+                    $('#bienvenida').text('');
+                }
+                
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
