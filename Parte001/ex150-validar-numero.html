@@ -1,0 +1,48 @@
+<!-- Ejercicio 150: Validar un valor numérico con una solicitud Ajax (GET). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 150</title>
+</head>
+
+<body>
+    <form>
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" required /><br>
+        <input type="submit" value="Validar" id="validar">
+    </form>
+
+    <br>
+
+    <p id="resultado"></p>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#validar').click(function () {
+                let edad = $('#edad').val().trim();
+
+                if (edad) {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'http://localhost:8080/validaciones/validar-edad/' + edad
+                    }).done((data) => {
+                        $('#resultado').text(data);
+                    }).fail((error) => {
+                        console.warn(error);
+                    });
+                }
+
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
