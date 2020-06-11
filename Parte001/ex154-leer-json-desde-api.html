@@ -1,0 +1,64 @@
+<!-- Ejercicio 154: Leer contenido JSON desde una API con la función ajax(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 154</title>
+</head>
+
+<body>
+
+    <button id="importarJson">Importar JSON</button>
+
+    <br/><br/>
+
+    <table border="1" id="personas">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#personas').hide();
+
+            $('#importarJson').click(function() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'https://randomuser.me/api/?results=5',
+                    dataType: 'json'
+                }).done((data) => {
+                    let personas = data.results;
+
+                    $('#personas tbody').empty();
+
+                    $.each(personas, function(indice, persona){
+                        let fila = $('<tr>');
+                        fila.append($(`<td>${persona.id.value}</td>`));
+                        fila.append($(`<td>${persona.name.first}</td>`));
+                        fila.append($(`<td>${persona.name.last}</td>`));
+                        fila.append($(`<td>${persona.dob.age}</td>`));
+
+                        $('#personas tbody').append(fila);
+                    });
+
+                    $('#personas').show();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
