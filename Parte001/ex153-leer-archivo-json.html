@@ -1,0 +1,60 @@
+<!-- Ejercicio 153: Leer contenido JSON a través de la invocación de la función ajax(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 153</title>
+</head>
+
+<body>
+
+    <button id="importarJson">Importar JSON</button>
+
+    <br/><br/>
+
+    <table border="1" id="personas">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#personas').hide();
+
+            $('#importarJson').click(function() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'ex153_personas.json',
+                    dataType: 'json'
+                }).done((data) => {
+                    $.each(data, function(indice, persona) {
+                        let fila = $('<tr>');
+                        fila.append($(`<td>${persona.id}</td>`));
+                        fila.append($(`<td>${persona.nombre}</td>`));
+                        fila.append($(`<td>${persona.apellido}</td>`));
+                        fila.append($(`<td>${persona.edad}</td>`));
+
+                        $('#personas tbody').append(fila);
+                    });
+
+                    $('#personas').show();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

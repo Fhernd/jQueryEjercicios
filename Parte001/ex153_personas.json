@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1001,
+        "nombre": "Danny",
+        "apellido": "Ortiz",
+        "edad": 29
+    },
+    {
+        "id": 1002,
+        "nombre": "Edward",
+        "apellido": "Ordoñez",
+        "edad": 31
+    },
+    {
+        "id": 1003,
+        "nombre": "Germán",
+        "apellido": "Meneses",
+        "edad": 23
+    },
+    {
+        "id": 1004,
+        "nombre": "Edgar",
+        "apellido": "Ordoñez",
+        "edad": 43
+    },
+    {
+        "id": 1005,
+        "nombre": "Juan",
+        "apellido": "Urbano",
+        "edad": 47
+    }
+]
