@@ -1,0 +1,60 @@
+<!-- Ejercicio 155: Leer contenido XML a través de la invocación de la función ajax(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 155</title>
+</head>
+
+<body>
+
+    <button id="importarXml">Importar XML</button>
+
+    <br/><br/>
+
+    <table border="1" id="personas">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#personas').hide();
+
+            $('#importarXml').click(() => {
+                $.ajax({
+                    type: 'GET',
+                    url: 'ex155-personas.xml',
+                    dataType: 'xml'
+                }).done((data) => {
+                    $(data).find('persona').each(function() {
+                        let fila = $('<tr>');
+                        fila.append($(`<td>${$(this).find('id').text()}</td>`));
+                        fila.append($(`<td>${$(this).find('nombre').text()}</td>`));
+                        fila.append($(`<td>${$(this).find('apellido').text()}</td>`));
+                        fila.append($(`<td>${$(this).find('edad').text()}</td>`));
+
+                        $('#personas tbody').append(fila);
+                    });
+
+                    $('#personas').show();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

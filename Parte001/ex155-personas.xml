@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personas>
+   <persona>
+      <apellido>Ortiz</apellido>
+      <edad>29</edad>
+      <id>1001</id>
+      <nombre>Danny</nombre>
+   </persona>
+   <persona>
+      <apellido>Ordoñez</apellido>
+      <edad>31</edad>
+      <id>1002</id>
+      <nombre>Edward</nombre>
+   </persona>
+   <persona>
+      <apellido>Meneses</apellido>
+      <edad>23</edad>
+      <id>1003</id>
+      <nombre>Germán</nombre>
+   </persona>
+   <persona>
+      <apellido>Ordoñez</apellido>
+      <edad>43</edad>
+      <id>1004</id>
+      <nombre>Edgar</nombre>
+   </persona>
+   <persona>
+      <apellido>Urbano</apellido>
+      <edad>47</edad>
+      <id>1005</id>
+      <nombre>Juan</nombre>
+   </persona>
+</personas>
