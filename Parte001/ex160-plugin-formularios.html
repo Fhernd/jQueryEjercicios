@@ -1,0 +1,85 @@
+<!-- Ejercicio 160: Manipular formularios con el plugin jQuery Forms. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 160</title>
+
+    <style>
+        .etiqueta {
+            float: left;
+            width: 120px;
+        }
+
+        .informacion {
+            width: 200px;
+        }
+
+        .error {
+            color: red;
+            padding-left: 10px;
+        }
+
+        .submit {
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+
+        .limpiar {
+            margin-left: 125px;
+            margin-top: 10px;
+        }
+
+        div {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="datos">
+        <div>
+            <span class="label">ID: *</span><input type="text" class="informacion" name="id" />
+            <span class="error">Este campo es obligatorio.</span>
+        </div>
+        <div>
+            <span class="etiqueta">Email: *</span><input type="text" class="informacion" name="email" /><span
+                class="error">Email inválido</span></div>
+        <input class="submit" type="submit" value="Submit" />
+        <button class="limpiar" id="limpiarCampos">Limpiar campos</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha256-3TKcZElR88BBIA6CeePJAGOsW1yIYf4lP8pI333YuZw=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('.submit').click(function(evento) {
+                evento.preventDefault();
+
+                let datosCampos = $('#datos *').fieldValue();
+
+                let serializacion = $('#datos *').fieldSerialize();
+
+                console.log(datosCampos);
+
+                console.log(serializacion);
+            });
+
+            $('#limpiarCampos').click(function(evento) {
+                evento.preventDefault();
+
+                $('#datos').clearForm();
+            });
+        });
+    </script>
+</body>
+
+</html>
