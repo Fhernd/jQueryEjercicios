@@ -1,0 +1,55 @@
+<!-- Ejercicio 164: Distinguir visualmente diferentes elementos HTML con CSS. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 164</title>
+
+    <style>
+        .verde {
+            color: green;
+            font-style: italic
+        }
+
+        .resaltado {
+            background-color: yellow;
+            color: blue;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .rojo {
+            color: red;
+            font-weight: bold
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>La Masque</h1>
+    <p>Sa corps m'enivre l'amour tournons prince mystérieux. Grâces tes femme tete pourquoi. Fait de demain mal de
+        m'appelle, vivre pleure-t-elle vois éclairé faudra la suborneur couronne» visage fait. Face tes.</p>
+
+    <h1>Fauste</h1>
+    <p>Fühl euch bringt blick ihr strenge und strenge das mein mild, denen vor einer ihr ertönt geisterreich lied welt,
+        zerstoben.</p>
+
+    <button id="aplicarEstilos">Aplicar estilos</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#aplicarEstilos').click(function() {
+                $('h1').addClass('rojo');
+                $('p').addClass('resaltado');
+            });
+        });
+    </script>
+</body>
+
+</html>
