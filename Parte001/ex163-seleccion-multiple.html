@@ -1,0 +1,42 @@
+<!-- Ejercicio 163: Permitir la selección múltiple de elementos con Bootstrap Multiselect. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 163</title>
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css"
+        integrity="sha256-7stu7f6AB+1rx5IqD8I+XuIcK4gSnpeGeSjqsODU+Rk=" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <select id="lenguajes" multiple="multiple">
+        <option value="Javascript">Javascript</option>
+        <option value="Python">Python</option>
+        <option value="LISP">LISP</option>
+        <option value="C++">C++</option>
+        <option value="jQuery">jQuery</option>
+        <option value="Ruby">Ruby</option>
+    </select>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js"
+        integrity="sha256-qoj3D1oB1r2TAdqKTYuWObh01rIVC1Gmw9vWp1+q5xw=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#lenguajes').multiselect();
+        });
+    </script>
+</body>
+
+</html>
