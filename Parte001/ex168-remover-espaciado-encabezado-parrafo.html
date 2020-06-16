@@ -1,0 +1,46 @@
+<!-- Ejercicio 168: Remover espaciado entre un encabezado y un párrafo. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 168</title>
+
+    <style>
+        .encabezado {
+            margin: 0;
+            padding: 0;
+        }
+
+        .contenido {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1 id="titulo">La Masque</h1>
+    <p id="resumen">Sa corps m'enivre l'amour tournons prince mystérieux. Grâces tes femme tete pourquoi. Fait de demain mal de
+        m'appelle, vivre pleure-t-elle vois éclairé faudra la suborneur couronne» visage fait. Face tes.</p>
+
+    <button id="removerEspaciado">Remover espaciado</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#removerEspaciado').click(function() {
+                $('#titulo').addClass('encabezado');
+                $('#resumen').addClass('contenido');
+            });
+        });
+    </script>
+</body>
+
+</html>
