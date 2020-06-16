@@ -1,0 +1,39 @@
+<!-- Ejercicio 167: Agregar más capitalización a la primera letra de un párrafo. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 167</title>
+
+    <style>
+        .capitalizacion {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>La Masque</h1>
+    <p><span>S</span>a corps m'enivre l'amour tournons prince mystérieux. Grâces tes femme tete pourquoi. Fait de demain mal de
+        m'appelle, vivre pleure-t-elle vois éclairé faudra la suborneur couronne» visage fait. Face tes.</p>
+
+    <button id="aplicarCapitalizacion">Aplicar capitalización</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#aplicarCapitalizacion').click(function() {
+                $('p span').addClass('capitalizacion');
+            });
+        });
+    </script>
+</body>
+
+</html>
