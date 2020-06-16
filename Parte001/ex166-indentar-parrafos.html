@@ -1,0 +1,56 @@
+<!-- Ejercicio 166: Agregar indentación a elementos tipo párrafo (p). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 166</title>
+
+    <style>
+        .indentacion1 {
+            margin-left: 10%;
+        }
+
+        .indentacion2 {
+            margin-left: 20%;
+        }
+
+        .indentacion3 {
+            margin-left: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>La Masque</h1>
+    <p>Sa corps m'enivre l'amour tournons prince mystérieux. Grâces tes femme tete pourquoi. Fait de demain mal de
+        m'appelle, vivre pleure-t-elle vois éclairé faudra la suborneur couronne» visage fait. Face tes.</p>
+
+    <h1>Fauste</h1>
+    <p>Fühl euch bringt blick ihr strenge und strenge das mein mild, denen vor einer ihr ertönt geisterreich lied
+        welt, zerstoben.</p>
+
+    <h1>The Raven</h1>
+    <p>Thy chamber home morrow guessing gave spoken no that nights now. I and in this my. The above bird this.</p>
+
+    <button id="indentarParrafos">Indentar párrafos</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#indentarParrafos').click(function() {
+                $('p').eq(0).addClass('indentacion1');
+                $('p').eq(1).addClass('indentacion2');
+                $('p').eq(2).addClass('indentacion3');
+            });
+        });
+    </script>
+</body>
+
+</html>
