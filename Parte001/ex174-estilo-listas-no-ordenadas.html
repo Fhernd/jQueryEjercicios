@@ -1,0 +1,55 @@
+<!-- Ejercicio 174: Aplicar un estilo uniforme para las viñetas de una lista no ordenada (ul). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 174</title>
+
+    <style>
+        .item-lista {
+            list-style-type: disc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>Reproductores
+            <ul>
+                <li>Escritorio
+                    <ul>
+                        <li>Winamp</li>
+                        <li>VLC</li>
+                        <li>Windows Media Player</li>
+                    </ul>
+                </li>
+                <li>Web
+                    <ul>
+                        <li>Spotify</li>
+                        <li>YouTube</li>
+                        <li>Deezer</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <button id="aplicarEstiloVignieta">Aplicar estilo viñeta</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#aplicarEstiloVignieta').click(function() {
+                $('li').addClass('item-lista');
+            });
+        });
+    </script>
+</body>
+
+</html>
