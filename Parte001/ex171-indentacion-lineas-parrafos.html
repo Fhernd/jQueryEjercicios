@@ -1,0 +1,46 @@
+<!-- Ejercicio 171: Agregar sangría colgante a elementos de tipo párrafo (p). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 171</title>
+
+    <style>
+        .sangria-colgante {
+            text-indent: -10%;
+            margin-left: 10%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>La Masque</h1>
+    <p>Sa corps m'enivre l'amour tournons prince mystérieux. Grâces tes femme tete pourquoi. Fait de demain mal de
+        m'appelle, vivre pleure-t-elle vois éclairé faudra la suborneur couronne» visage fait. Face tes.</p>
+
+    <h1>Fauste</h1>
+    <p>Erste wahn wieder jenem sie lieb mich der um umwittert, umwittert hinweggeschwunden stunden die steigen, in zug zerstreuet sich bang folgt und kommt, ihr busen guten alten drängt menge schauer klage ist sehnen. Steigt es mild es sang sonst erste die gleich. Schöne bringt im verschwand stillen auf. Herz fühlt euch fühl folgt fühl zauberhauch entwöhntes im wird. Ich diesmal.</p>
+
+    <h1>The Raven</h1>
+    <p>Soul and and aidenn betook doubting i. Syllable that or the and implore my made lenore and, prophet bust lenore december disaster quaint no. It many in a you raven lattice desert you, not before with feather tis that more, stepped dreaming in that above napping suddenly chamber more, shrieked raven my the heard respiterespite, explore that demons stopped i tell there. It that more never napping flung. I master the oh till. Implore the straight the angels. Never entreating.</p>
+
+    <button id="aplicarIndentacion">Aplicar indentación</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#aplicarIndentacion').click(function() {
+                $('p').addClass('sangria-colgante');
+            });
+        });
+    </script>
+</body>
+
+</html>
