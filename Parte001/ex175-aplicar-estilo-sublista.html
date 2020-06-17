@@ -1,0 +1,56 @@
+<!-- Ejercicio 175: Aplicar un estilo a una sublista específica por medio de la función addClass(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 175</title>
+
+    <style>
+        .item-lista {
+            list-style-type: lower-alpha;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>Reproductores
+            <ul>
+                <li>Escritorio
+                    <ul id="escritorio">
+                        <li>Winamp</li>
+                        <li>VLC</li>
+                        <li>Windows Media Player</li>
+                    </ul>
+                </li>
+                <li>Web
+                    <ul>
+                        <li>Spotify</li>
+                        <li>YouTube</li>
+                        <li>Deezer</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <button id="aplicarEstilo">Aplicar estilo</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#aplicarEstilo').click(function() {
+                $('#escritorio').addClass('item-lista');
+            });
+        });
+    </script>
+</body>
+
+</html>
