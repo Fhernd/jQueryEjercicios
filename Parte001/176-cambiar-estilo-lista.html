@@ -1,0 +1,59 @@
+<!-- Ejercicio 176: Cambiar el estilo de los elementos de una lista. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 176</title>
+
+    <style>
+        .borde-item {
+            border-top: 1px solid black;
+            margin-left: -40px;
+        }
+
+        .borde-inferior-item {
+            border-bottom: 1px solid black;
+        }
+
+        .lista-items {
+            list-style-type: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Reproductores</h3>
+    <ul id="reproductores">
+        <li>Winamp</li>
+        <li>VLC</li>
+        <li>Windows Media Player</li>
+        <li>Spotify</li>
+        <li>YouTube</li>
+        <li>Deezer</li>
+    </ul>
+
+    <br>
+    <br>
+    <button id="cambiarEstilo">Cambiar estilo</button>
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#cambiarEstilo').click(function() {
+                $('#reproductores').addClass('lista-items');
+                $('#reproductores li').addClass('borde-item');
+                $('#reproductores li:last').addClass('borde-inferior-item');
+            });
+        });
+    </script>
+</body>
+
+</html>
