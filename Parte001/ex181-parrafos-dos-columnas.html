@@ -13,7 +13,15 @@
             box-sizing: border-box;
         }
     </style>
-</head>
+</head>if (json.getString(JSON.FUNCTION) == JSON.SPRINT_DATA) {
+    val result = getSprintAdminData();
+    val test = JSONObject()
+    test.put("sprints", result)
+    val userAdmin = Admin("admin", msg.connection)
+    userAdmin.send(test.toString());
+} else {
+    //functions[fnName]?.invoke(user, params)
+}
 
 <body>
 

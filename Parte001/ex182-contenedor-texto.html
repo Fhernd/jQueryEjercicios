@@ -1,0 +1,42 @@
+<!-- Ejercicio 182: Crear un contenedor para un texto extenso. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 182</title>
+    <style>
+        .contenedor-texto {
+            background: #4CAF50;
+            color: white;
+            width: 50%;
+            height: 200px;
+            padding: 15px;
+            overflow: scroll;
+            border: 3px solid #CCC;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="contenido">Sadipscing justo et et et invidunt no vero ipsum. Clita at dolor lorem takimata eos dolor sadipscing, dolor et ipsum ut dolore, vero sit dolor voluptua diam accusam elitr, tempor gubergren dolores kasd stet est. Duo voluptua diam duo sed tempor et et, sit amet dolore dolores et sanctus sed ipsum nonumy, clita aliquyam sea ut et eos kasd. Kasd ipsum ut lorem sit. Rebum eirmod labore amet vero amet justo, rebum at sit et dolores no voluptua consetetur. Et dolor voluptua diam clita. Sit erat sadipscing nonumy gubergren diam diam. Rebum dolores ipsum sea invidunt invidunt. Sit eos vero dolor dolor sed amet diam. Consetetur sadipscing aliquyam eirmod nonumy aliquyam at lorem, et erat est duo ipsum dolore. Invidunt accusam kasd no et dolor dolor dolor vero est, et takimata et dolor ut justo, ipsum dolor est takimata dolor dolores invidunt et lorem. Elitr et erat at stet diam et rebum amet erat. Stet invidunt magna consetetur dolores et, dolor elitr lorem sit lorem magna amet amet takimata. Ipsum et clita ea justo labore, tempor dolores dolor lorem nonumy eirmod, amet labore dolore clita invidunt, eirmod amet ut lorem diam lorem sadipscing lorem sit, et erat lorem sed magna. Sadipscing justo et et et invidunt no vero ipsum. Clita at dolor lorem takimata eos dolor sadipscing, dolor et ipsum ut dolore, vero sit dolor voluptua diam accusam elitr, tempor gubergren dolores kasd stet est. Duo voluptua diam duo sed tempor et et, sit amet dolore dolores et sanctus sed ipsum nonumy, clita aliquyam sea ut et eos kasd. Kasd ipsum ut lorem sit. Rebum eirmod labore amet vero amet justo, rebum at sit et dolores no voluptua consetetur. Et dolor voluptua diam clita. Sit erat sadipscing nonumy gubergren diam diam. Rebum dolores ipsum sea invidunt invidunt. Sit eos vero dolor dolor sed amet diam. Consetetur sadipscing aliquyam eirmod nonumy aliquyam at lorem, et erat est duo ipsum dolore. Invidunt accusam kasd no et dolor dolor dolor vero est, et takimata et dolor ut justo, ipsum dolor est takimata dolor dolores invidunt et lorem. Elitr et erat at stet diam et rebum amet erat. Stet invidunt magna consetetur dolores et, dolor elitr lorem sit lorem magna amet amet takimata. Ipsum et clita ea justo labore, tempor dolores dolor lorem nonumy eirmod, amet labore dolore clita invidunt, eirmod amet ut lorem diam lorem sadipscing lorem sit, et erat lorem sed magna. Sadipscing justo et et et invidunt no vero ipsum. Clita at dolor lorem takimata eos dolor sadipscing, dolor et ipsum ut dolore, vero sit dolor voluptua diam accusam elitr, tempor gubergren dolores kasd stet est. Duo voluptua diam duo sed tempor et et, sit amet dolore dolores et sanctus sed ipsum nonumy, clita aliquyam sea ut et eos kasd. Kasd ipsum ut lorem sit. Rebum eirmod labore amet vero amet justo, rebum at sit et dolores no voluptua consetetur. Et dolor voluptua diam clita. Sit erat sadipscing nonumy gubergren diam diam. Rebum dolores ipsum sea invidunt invidunt. Sit eos vero dolor dolor sed amet diam. Consetetur sadipscing aliquyam eirmod nonumy aliquyam at lorem, et erat est duo ipsum dolore. Invidunt accusam kasd no et dolor dolor dolor vero est, et takimata et dolor ut justo, ipsum dolor est takimata dolor dolores invidunt et lorem. Elitr et erat at stet diam et rebum amet erat. Stet invidunt magna consetetur dolores et, dolor elitr lorem sit lorem magna amet amet takimata. Ipsum et clita ea justo labore, tempor dolores dolor lorem nonumy eirmod, amet labore dolore clita invidunt, eirmod amet ut lorem diam lorem sadipscing lorem sit, et erat lorem sed magna.</div>
+
+    <br><br>
+    <button id="crearContenedor">Crear contenedor</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#crearContenedor').click(function() {
+                $('#contenido').addClass('contenedor-texto');
+            });
+        });
+    </script>
+</body>
+
+</html>
