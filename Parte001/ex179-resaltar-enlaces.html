@@ -1,0 +1,40 @@
+<!-- Ejercicio 179: Resaltar enlaces (a) con una clase CSS de forma interactiva. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 179</title>
+
+    <style>
+        .resaltar-enlace {
+            font-weight: bold;
+            background-color: #00f;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Tierra y luna</h3>
+    <p>Mi llenando ni pero baja ninos lenta. Desnudo dolor pisan de despenada pasan aire sepultura se sin. Que tierra con donde el un pies, ceniza de es para algodón con de olvidando ni, tierra los de deja y y lo sensitivo, las huido del nunca muertos loca brooklyn para tierra grupos. Encuentro tierra los sangre vuelve de y. De golondrina de embozo por desangradas viciosa <a href="https://es.wikipedia.org/wiki/Brooklyn">Brooklyn</a> pulso. Celeste tierra quemadas tránsito los y hombrecillo del de. Bajo y los embozo los abierta se, ansioso embozo criaturas consume diana y manos me vuelve. Alegrísima tierra viva de la. Los despenada luna.</p>
+
+    <button id="resaltarEnlaces">Resaltar enlaces</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#resaltarEnlaces').click(function() {
+                $('a[href]').addClass('resaltar-enlace');
+            });
+        });
+    </script>
+</body>
+
+</html>
