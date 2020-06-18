@@ -1,0 +1,38 @@
+<!-- Ejercicio 180: Cambiar de modo dinámico la dimensión de varios párrafos. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 180</title>
+</head>
+
+<body>
+
+
+    <h1>La Masque</h1>
+    <p id="laMasque">Sa corps m'enivre l'amour tournons prince mystérieux. Grâces tes femme tete pourquoi. Fait de demain mal de
+        m'appelle, vivre pleure-t-elle vois éclairé faudra la suborneur couronne» visage fait. Face tes.</p>
+
+    <h1>Fauste</h1>
+    <p id="fauste">Erste wahn wieder jenem sie lieb mich der um umwittert, umwittert hinweggeschwunden stunden die steigen, in zug zerstreuet sich bang folgt und kommt, ihr busen guten alten drängt menge schauer klage ist sehnen. Steigt es mild es sang sonst erste die gleich. Schöne bringt im verschwand stillen auf. Herz fühlt euch fühl folgt fühl zauberhauch entwöhntes im wird. Ich diesmal.</p>
+
+    <button id="cambiarDimensionParrafos">Cambiar dimensión párrafos</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#cambiarDimensionParrafos').click(function() {
+                $('#laMasque').css({width: '50%', padding: '10px', border: '2px dashed'});
+
+                $('#fauste').css({padding: '30px', border: '2px solid gray', width: '70%'});
+            });
+        });
+    </script>
+</body>
+
+</html>
