@@ -1,0 +1,31 @@
+<!-- Ejercicio 183: Agregar transparencia a una imagen con la función css(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 183</title>
+</head>
+
+<body>
+
+    <img src="img/coliseo.png" id="imagen" width="720px">
+
+    <br><br>
+    <button id="agregarTransparencia">Agregar transparencia</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#agregarTransparencia').click(function() {
+                $('#imagen').css({opacity: 0.5});
+            });
+        });
+    </script>
+</body>
+
+</html>
