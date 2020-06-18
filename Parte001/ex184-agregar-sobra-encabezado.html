@@ -1,0 +1,32 @@
+<!-- Ejercicio 184: Agregar sombra a un encabezado (h1) con la función css(). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 184</title>
+</head>
+
+<body>
+
+    <h1 id="titulo">Faust</h1>
+    <p>Irren ach macht getäuscht zug und die lispelnd und macht euch. Lebens wird ich freundschaft wohl wirklichkeiten folgt euch wird verschwand, herz ihr seelen ihr wie lied froher geisterreich dem stillen. Der sehnen klage lied euch. Sich wiederholt die sage selbst freundschaft.</p>
+
+    <br><br>
+    <button id="agregarSombra">Agregar sombra</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#agregarSombra').click(function() {
+                $('#titulo').css({'text-shadow': '3px 3px 6px red'});
+            });
+        });
+    </script>
+</body>
+
+</html>
