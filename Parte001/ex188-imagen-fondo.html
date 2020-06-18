@@ -1,0 +1,36 @@
+<!-- Ejercicio 188: Aplicar una imagen como fondo de una página Web. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 188</title>
+</head>
+
+<body>
+
+    <div>
+        jQuery es una librería de manipulación del DOM.
+    </div>
+
+    <br><br>
+    <button id="aplicarFondo">Aplicar fondo</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#aplicarFondo').click(function() {
+                $('body').css({
+                    'background-image': 'url(img/coliseo.png)',
+                    'background-repeat': 'no-repeat'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
