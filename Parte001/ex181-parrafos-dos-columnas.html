@@ -1,0 +1,56 @@
+<!-- Ejercicio 181: Crear un layout para organizar elementos párrafo en dos columnas. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 181</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fila">
+        <div class="columna">
+            <h1>La Masque</h1>
+            <p id="laMasque">Sa corps m'enivre l'amour tournons prince mystérieux. Grâces tes femme tete pourquoi. Fait
+                de
+                demain mal de
+                m'appelle, vivre pleure-t-elle vois éclairé faudra la suborneur couronne» visage fait. Face tes.</p>
+        </div>
+        <div class="columna">
+            <h1>Fauste</h1>
+            <p id="fauste">Erste wahn wieder jenem sie lieb mich der um umwittert, umwittert hinweggeschwunden stunden
+                die
+                steigen, in zug zerstreuet sich bang folgt und kommt, ihr busen guten alten drängt menge schauer klage
+                ist
+                sehnen. Steigt es mild es sang sonst erste die gleich. Schöne bringt im verschwand stillen auf. Herz
+                fühlt
+                euch
+                fühl folgt fühl zauberhauch entwöhntes im wird. Ich diesmal.</p>
+        </div>
+    </div>
+
+    <button id="organizarContenido">Organizar contenido</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#organizarContenido').click(function() {
+                $('.columna').css({float: 'left', width: '50%', height: '500px', padding: '20px', 'background-color': 'gray'});
+
+                $('.fila').css({content: "", display: 'table', clear: 'both'});
+            });
+        })
+    </script>
+</body>
+
+</html>
