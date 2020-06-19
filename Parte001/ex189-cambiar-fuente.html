@@ -1,0 +1,33 @@
+<!-- Ejercicio 189: Cambiar la fuente de un elemento HTML. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Ejercicio 189</title>
+</head>
+
+<body>
+
+    <div id="contenido">
+        jQuery es una librería de manipulación del DOM.
+    </div>
+
+    <br><br>
+    <button id="cambiarFuente">Cambiar fuente</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#cambiarFuente').click(function() {
+                $('#contenido').css({'font-family': 'Courier New'});
+            });
+        });
+    </script>
+</body>
+
+</html>
